@@ -9,21 +9,36 @@ class HomeController extends ChangeNotifier {
   var _homeItems = FakeApiListModel([]);
   FakeApiListModel get homeItems => _homeItems;
 
+  var _allItems = FakeApiListModel([]);
+  FakeApiListModel get allItems => _allItems;
+
+  var _categoryItems = FakeApiListModel([]);
+  FakeApiListModel get categoryItems => _categoryItems;
+
   //fazendo a chamada http do repository,
   //para preencher a tela inicial com o retorno da api
   Future<void> getHomeitems() async {
     _homeItems = await fakeApiRepository.getHomeItems();
-    print(homeItems.results.length);
     //notificando os ouvintes desse controller para as mudanças (atualizar a lista)
     notifyListeners();
   }
 
   Future<void> getAllitems() async {
-    _homeItems = await fakeApiRepository.getHomeItems();
-    notifyListeners();
+    if(allItems.results.isEmpty) {
+      _allItems = await fakeApiRepository.getAllItems();
+      notifyListeners();
+    } return;
   }
 
+  Future<void> getCategpryitem(String category) async {
+      _categoryItems = await fakeApiRepository.getCategoryItem(category);
+      print(categoryItems.results.length);
+      notifyListeners();
+  }
 
-
+  //limpando a lista, visto que todas as categorias compartilham a mesma lista
+  void clearCategoryList() {
+    _categoryItems.results.clear();
+  }
 
 }

@@ -64,7 +64,7 @@ class Rating {
   Rating({this.rate, this.count});
 
   Rating.fromJson(Map<String, dynamic> json) {
-    rate = json['rate'];
+    rate = json['rate']?.toDouble();
     count = json['count'];
   }
 

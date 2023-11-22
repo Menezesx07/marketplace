@@ -32,7 +32,7 @@ class _cardItemState extends State<cardItem> {
 
     double width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
-    var heightImage = height*0.18;
+    var heightImage = height*0.17;
     double fontSizeh1 = width * 0.042;
     double fontSizeh2 = width * 0.035;
     double fontSizePrice = width * 0.05;
@@ -43,7 +43,7 @@ class _cardItemState extends State<cardItem> {
           (builder: (context) => DetailScreen(cardInfo: cardInfoDestr))),
 
       child: Card(
-        elevation: 4.0,
+        elevation: 4,
         margin: const EdgeInsets.all(8.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

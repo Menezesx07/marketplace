@@ -1,4 +1,7 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+
+import '../../pages/category_page.dart';
 
 class IconsGroupHome extends StatefulWidget {
   const IconsGroupHome({super.key});
@@ -10,7 +13,9 @@ class IconsGroupHome extends StatefulWidget {
 class _IconsGroupHomeState extends State<IconsGroupHome> {
 
   List<IconData> iconsList = [Icons.phone_android, Icons.diamond, Icons.man, Icons.woman];
-  List<String> label = ["Eletronics", "Jewelry", "Men", "Woman"];
+  List<String> label = ["electronics", "jewelery", "men's clothing", "women's clothing"];
+  //lista criada pois usar a "label" que vai ser enviado como paramtro, quebra o texto do widget
+  List<String> displayLabel = ["Electronics", "Jewelery", "Men", "Women"];
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +36,7 @@ class _IconsGroupHomeState extends State<IconsGroupHome> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text("Brands", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22)),
-              Text("See All", style: TextStyle(fontWeight: FontWeight.w300, fontSize: 18)),
+
             ],
           ),
 
@@ -59,12 +64,14 @@ class _IconsGroupHomeState extends State<IconsGroupHome> {
                               iconsList[index],
                               size: 30,
                             ),
-                            onPressed: () {},
+                            onPressed: () => Navigator.push(context, MaterialPageRoute
+                                (builder: (context) => CategoryPage(label: label[index])))
+
                           ),
 
                           const SizedBox(height: 10),
 
-                          Text(label[index], style: const TextStyle(fontWeight: FontWeight.bold),)
+                          Text(displayLabel[index], style: const TextStyle(fontWeight: FontWeight.bold),)
 
                         ],
 

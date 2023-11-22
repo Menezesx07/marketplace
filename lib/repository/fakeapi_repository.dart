@@ -30,12 +30,7 @@ class FakeApiRepository {
   Future<FakeApiListModel> getCategoryItem(String category) async {
     var url = "https://fakestoreapi.com/products/category/$category";
     var res = await _dio.get(url);
-
     return FakeApiListModel.fromJson(res.data);
   }
-
-
-
-
 
 }
