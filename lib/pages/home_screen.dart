@@ -18,12 +18,6 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
 
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    Provider.of<HomeController>(context, listen: false).getHomeitems();
-  }
-
-  @override
   Widget build(BuildContext context) {
     // Pegando o tamanho da tela geral
     var size = MediaQuery.of(context).size;
@@ -47,11 +41,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 
                 const SearchBarHome(),
 
-              /*  Container(
+                Container(
                     height: carHeight,
                     width: carWidth,
                     color: Colors.blue,
-                    child: CarouselHome()),*/
+                    child: CarouselHome()),
 
                 const IconsGroupHome(),
                 
@@ -68,7 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                         InkWell(
                             onTap: () => Navigator.push(context, MaterialPageRoute
-                              (builder: (context) => AllItemsPage())),
+                              (builder: (context) => const AllItemsPage())),
                             child: const Text("See All", style: TextStyle(fontWeight: FontWeight.w300, fontSize: 18))),
                       ],
                     ),

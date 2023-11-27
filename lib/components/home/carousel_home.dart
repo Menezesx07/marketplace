@@ -66,4 +66,4 @@ class _SliderPState extends State<CarouselHome> {
 }
 
 Widget buildImage(String urlImage, int index) =>
-    Container(child: Image.network(urlImage, fit: BoxFit.cover));
+    Image.network(urlImage, fit: BoxFit.cover);

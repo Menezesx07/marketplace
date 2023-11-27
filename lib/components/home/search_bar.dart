@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../pages/cart_page.dart';
+import '../cart_button.dart';
+
 class SearchBarHome extends StatelessWidget {
   const SearchBarHome({super.key});
 
@@ -25,10 +28,10 @@ class SearchBarHome extends StatelessWidget {
                   focusedBorder: InputBorder.none,
                   border: InputBorder.none,
                   prefixIcon: Icon(Icons.search),
-                  suffixIcon: Icon(Icons.card_travel)
+                  suffixIcon: CartButton()
+                  )
               ),
             )
-        ),
       ],
     );
   }

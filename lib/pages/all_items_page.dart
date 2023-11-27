@@ -22,8 +22,6 @@ class _AllItemsPageState extends State<AllItemsPage> {
   @override
   Widget build(BuildContext context) {
 
-    bool teste = true;
-
     // Pegando o tamanho da tela geral
     var size = MediaQuery.of(context).size;
 

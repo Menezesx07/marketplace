@@ -4,11 +4,16 @@ import 'package:marketplace/pages/detail_screen.dart';
 import 'package:marketplace/pages/splash_screen.dart';
 import 'package:provider/provider.dart';
 
+import 'controller/cart_controller.dart';
+
 Future main() async {
   runApp(
-      ChangeNotifierProvider(
-        create: (context) => HomeController(),
-        child: const MyApp(),
+      MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (context) => HomeController()),
+          ChangeNotifierProvider(create: (context) => CartController())
+        ],
+        child: MyApp(),
       )
   );
 }

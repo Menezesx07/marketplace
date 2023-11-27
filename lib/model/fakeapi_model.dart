@@ -21,6 +21,7 @@ class FakeApiItem {
   String? category;
   String? image;
   Rating? rating;
+  num qnty = 1;
 
   FakeApiItem({
     this.id,
@@ -30,6 +31,7 @@ class FakeApiItem {
     this.category,
     this.image,
     this.rating,
+    required this.qnty
   });
 
   FakeApiItem.fromJson(Map<String, dynamic> json) {

@@ -14,6 +14,8 @@ class CategoryPage extends StatefulWidget {
 }
 
 class _CategoryPageState extends State<CategoryPage> {
+
+  //carregando a lista na api baseada na label que complementa o link
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();

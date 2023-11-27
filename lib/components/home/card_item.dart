@@ -13,7 +13,8 @@ class cardItem extends StatefulWidget {
 
 class _cardItemState extends State<cardItem> {
 
-  FakeApiItem cardInfoDestr = FakeApiItem();
+  //qnty está sendo declarado por conta do nullSafety
+  FakeApiItem cardInfoDestr = FakeApiItem(qnty: 1);
 
   @override
   void initState() {

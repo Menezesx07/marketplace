@@ -2,6 +2,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../controller/cart_controller.dart';
 import '../controller/home_controller.dart';
 import 'home_screen.dart';
 

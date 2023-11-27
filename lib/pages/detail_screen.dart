@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import '../components/cart_button.dart';
+import '../controller/cart_controller.dart';
 import '../model/fakeapi_model.dart';
 
 class DetailScreen extends StatefulWidget {
@@ -13,7 +16,8 @@ class DetailScreen extends StatefulWidget {
 
 class _DetailScreenState extends State<DetailScreen> {
 
-  FakeApiItem cardInfoDestr = FakeApiItem();
+  //qnty está sendo declarado por conta do nullSafety
+  FakeApiItem cardInfoDestr = FakeApiItem(qnty: 1);
 
   @override
   void initState() {
@@ -40,7 +44,7 @@ class _DetailScreenState extends State<DetailScreen> {
         actions: const [
           Padding(
             padding: EdgeInsets.only(right: 32.0),
-            child: Icon(Icons.card_travel),
+            child: CartButton(),
           )
         ],
       ),
@@ -105,13 +109,26 @@ class _DetailScreenState extends State<DetailScreen> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text("Price", style: TextStyle(fontSize: 12)),
+                const Text("Total", style: TextStyle(fontSize: 12)),
                 Text("R\$ ${cardInfoDestr.price}", style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
               ],
             ),
 
             FilledButton(
-                onPressed: () {},
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all<Color>(
+                    Colors.black, // Cor de fundo do botão
+                  ),
+                ),
+                onPressed: () {
+
+                  //instanciando o provider
+                  var func = Provider.of<CartController>(context, listen: false);
+
+                  //passando o objeto sem destruir
+                  func.insertItem(widget.cardInfo);
+                  
+                },
                 child: const Text("ADD TO CARD")
 
             )
