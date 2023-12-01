@@ -23,22 +23,9 @@ class CartController extends ChangeNotifier {
 
   int hiveNum = 0;
 
-  //remover
-  void hiveRefresh() {
-    List<dynamic> chaves = _cartBox.keys.toList();
-    List<dynamic> valores = _cartBox.values.toList();
-
-    hiveNum = chaves.length;
-    notifyListeners();
-    print(chaves);
-    print(valores);
-  }
-
    getHiveItemCart() async {
     //pegando todos os itens da lista no hive
     List<dynamic> chaves = _cartBox.keys.toList();
-
-    print("antes: ${itemList.results.length}");
 
     //future await para segurar o codigo até terminar o map
     //não sei o motivo, mas tem de usar os 2 await
@@ -52,8 +39,6 @@ class CartController extends ChangeNotifier {
       _itemList.results.add(cardInfo);
 
     }));
-
-    print("depois: ${itemList.results.length}");
 
     getTotalValue();
     notifyListeners();
@@ -126,14 +111,12 @@ class CartController extends ChangeNotifier {
 
       //pra cada item do mapa, ele pega o valor, multiplica pela quantidade,
       //e atribui a quantidade
-      _itemList.results.forEach((element) {
-
-        double teste = 0;
+      //era um forEach mas o Intellij ficou enchendo o saco pra trocar por for In
+      for (var element in _itemList.results) {
 
         _totalValue = _totalValue + (element.price! * element.qnty) ;
-
         notifyListeners();
-      });
+      }
 
   }
 

@@ -9,7 +9,7 @@ import 'controller/cart_controller.dart';
 Future main() async {
 
   await Hive.initFlutter();
-  var box = await Hive.openBox('cartBox');
+  await Hive.openBox('cartBox');
 
   runApp(
       MultiProvider(
@@ -17,7 +17,7 @@ Future main() async {
           ChangeNotifierProvider(create: (context) => HomeController()),
           ChangeNotifierProvider(create: (context) => CartController())
         ],
-        child: MyApp(),
+        child: const MyApp(),
       )
   );
 }

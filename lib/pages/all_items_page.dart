@@ -64,7 +64,7 @@ class _AllItemsPageState extends State<AllItemsPage> {
                       ),
                       itemCount: value.allItems.results.length,
                       itemBuilder: (context, index) {
-                        return cardItem(
+                        return CardItem(
                             cardInfo: value.allItems.results[index]);
                       },
                     ),

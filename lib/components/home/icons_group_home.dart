@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../../pages/category_page.dart';
@@ -23,7 +22,6 @@ class _IconsGroupHomeState extends State<IconsGroupHome> {
     double width = MediaQuery.of (context).size.width;
     double width85 = width*0.85;
 
-    double height = MediaQuery.of (context).size.height;
     double height50 = width*0.5;
 
     return SizedBox(

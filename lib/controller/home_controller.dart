@@ -32,7 +32,6 @@ class HomeController extends ChangeNotifier {
 
   Future<void> getCategpryitem(String category) async {
       _categoryItems = await fakeApiRepository.getCategoryItem(category);
-      print(categoryItems.results.length);
       notifyListeners();
   }
 

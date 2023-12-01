@@ -8,6 +8,7 @@ import '../model/fakeapi_model.dart';
 class DetailScreen extends StatefulWidget {
   const DetailScreen({super.key, this.cardInfo});
 
+  // ignore: prefer_typing_uninitialized_variables
   final cardInfo;
 
   @override
@@ -127,6 +128,8 @@ class _DetailScreenState extends State<DetailScreen> {
 
                   //passando o objeto sem destruir
                   func.insertItem(widget.cardInfo);
+
+                  showMySnackbar(context);
                   
                 },
                 child: const Text("ADD TO CARD")
@@ -138,5 +141,18 @@ class _DetailScreenState extends State<DetailScreen> {
       ),
 
     );
+  }
+
+  void showMySnackbar(BuildContext context) {
+    final snackBar = SnackBar(
+      content: const Text('Item adicionado com sucesso!'),
+      duration: const Duration(seconds: 3),
+      action: SnackBarAction(
+        label: 'Fechar',
+        onPressed: () { },
+      ),
+    );
+
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 }

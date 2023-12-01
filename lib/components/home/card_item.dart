@@ -1,17 +1,19 @@
+// ignore_for_file: prefer_typing_uninitialized_variables
+
 import 'package:flutter/material.dart';
 import 'package:marketplace/model/fakeapi_model.dart';
 import 'package:marketplace/pages/detail_screen.dart';
 
-class cardItem extends StatefulWidget {
-  const cardItem({super.key, this.cardInfo});
+class CardItem extends StatefulWidget {
+  const CardItem({super.key, this.cardInfo});
 
   final cardInfo;
 
   @override
-  State<cardItem> createState() => _cardItemState();
+  State<CardItem> createState() => _CardItemState();
 }
 
-class _cardItemState extends State<cardItem> {
+class _CardItemState extends State<CardItem> {
 
   //qnty está sendo declarado por conta do nullSafety
   FakeApiItem cardInfoDestr = FakeApiItem(qnty: 1);
@@ -95,7 +97,7 @@ class _cardItemState extends State<cardItem> {
                   ),
 
                   Text(
-                    'R\$ ${cardInfoDestr.price}',
+                    'R\$ ${cardInfoDestr.price!.toStringAsFixed(2)}',
                     style: TextStyle(
                       fontSize: fontSizePrice,
                       color: Colors.green,

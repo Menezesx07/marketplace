@@ -41,11 +41,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 
                 const SearchBarHome(),
 
-                /*Container(
+                Container(
                     height: carHeight,
                     width: carWidth,
                     color: Colors.blue,
-                    child: CarouselHome()),*/
+                    child: const CarouselHome()),
 
                 const IconsGroupHome(),
                 
@@ -82,7 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     itemCount: value.homeItems.results.length,
                     itemBuilder: (context, index) {
-                      return cardItem(
+                      return CardItem(
                           cardInfo: value.homeItems.results[index]);
                     },
                   ),

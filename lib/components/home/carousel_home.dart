@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:carousel_slider/carousel_controller.dart';
 
 class CarouselHome extends StatefulWidget {
-  CarouselHome({Key? key}) : super(key: key);
+  const CarouselHome({Key? key}) : super(key: key);
 
   @override
   State<CarouselHome> createState() => _SliderPState();

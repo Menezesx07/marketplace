@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-import '../../pages/cart_page.dart';
 import '../cart_button.dart';
 
 class SearchBarHome extends StatelessWidget {
