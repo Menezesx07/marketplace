@@ -110,7 +110,7 @@ class _DetailScreenState extends State<DetailScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text("Total", style: TextStyle(fontSize: 12)),
-                Text("R\$ ${cardInfoDestr.price}", style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+                Text("R\$ ${cardInfoDestr.price?.toStringAsFixed(2)}", style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
               ],
             ),
 

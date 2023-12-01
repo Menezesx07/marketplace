@@ -21,7 +21,7 @@ class FakeApiItem {
   String? category;
   String? image;
   Rating? rating;
-  num qnty = 1;
+  int qnty = 1;
 
   FakeApiItem({
     this.id,

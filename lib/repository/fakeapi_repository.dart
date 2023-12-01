@@ -1,5 +1,3 @@
-
-
 import 'package:dio/dio.dart';
 
 import '../model/fakeapi_model.dart';
@@ -21,16 +19,27 @@ class FakeApiRepository {
   }
 
   Future<FakeApiListModel> getAllItems() async {
-    var url = "https://fakestoreapi.com/products";
+    var url = "products";
     var res = await _dio.get(url);
 
     return FakeApiListModel.fromJson(res.data);
   }
 
   Future<FakeApiListModel> getCategoryItem(String category) async {
-    var url = "https://fakestoreapi.com/products/category/$category";
+    var url = "category/$category";
     var res = await _dio.get(url);
     return FakeApiListModel.fromJson(res.data);
+  }
+
+  //tem de usar a classe FakeApiItem, para retornar um unico item,
+  //ao invés da lista "results" que o "ListModel" gera
+  //precisa ser um item unico, pois é feito um map no controller
+  //que para cada retorno da repository, esse item é inserido numa lista
+  //no proprio controller
+  Future<FakeApiItem> getCartItems(int id) async {
+    var url = "products/$id";
+    var res = await _dio.get(url);
+    return FakeApiItem.fromJson(res.data);
   }
 
 }

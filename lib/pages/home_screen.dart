@@ -41,11 +41,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 
                 const SearchBarHome(),
 
-                Container(
+                /*Container(
                     height: carHeight,
                     width: carWidth,
                     color: Colors.blue,
-                    child: CarouselHome()),
+                    child: CarouselHome()),*/
 
                 const IconsGroupHome(),
                 

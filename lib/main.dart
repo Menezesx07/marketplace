@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:marketplace/controller/home_controller.dart';
-import 'package:marketplace/pages/detail_screen.dart';
 import 'package:marketplace/pages/splash_screen.dart';
 import 'package:provider/provider.dart';
 
 import 'controller/cart_controller.dart';
 
 Future main() async {
+
+  await Hive.initFlutter();
+  var box = await Hive.openBox('cartBox');
+
   runApp(
       MultiProvider(
         providers: [

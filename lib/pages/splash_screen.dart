@@ -20,6 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void didChangeDependencies() {
     super.didChangeDependencies();
     Provider.of<HomeController>(context, listen: false).getHomeitems();
+    Provider.of<CartController>(context, listen: false).getHiveItemCart();
   }
 
   @override

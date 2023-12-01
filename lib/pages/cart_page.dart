@@ -68,7 +68,6 @@ class _CartPageState extends State<CartPage> {
                     ),
                   )
 
-
                 ],
               ),
             ),
@@ -88,7 +87,7 @@ class _CartPageState extends State<CartPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text("Price", style: TextStyle(fontSize: 12)),
-                Text("R\$ ${value.totalValue}", style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+                Text("R\$ ${value.totalValue.toStringAsFixed(2)}", style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
               ],
             ),
 
